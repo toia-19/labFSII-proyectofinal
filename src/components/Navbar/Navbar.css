@@ -1,0 +1,37 @@
+/* Estilos generales del navegador */
+.navbar {
+    margin: 0;
+    width: 100%;
+    padding: 1.6rem;
+
+    display: flex;
+    justify-content: space-around;
+
+    background-color: rgb(60, 60, 98);
+}
+
+/* Estilos en items */
+span{
+    margin: 0.5rem;
+    text-align: center;
+    
+    color: white;
+}
+
+/* Estilos menú desplegable */
+.i-menu-desplegable{
+    font-size: 0.8em;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: rgba(60, 60, 98, 0.79);
+}
+
+.i-menu-desplegable:hover{
+    background-color: rgba(94, 94, 150, 0.79);
+}
+
+svg{
+    color: white;
+}
