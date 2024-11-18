@@ -19,7 +19,7 @@ function Carrusel() {
     }
 
     return (
-        <div className="carrusel"> 
+        <div className="Carrusel"> 
             <Galleria className="img-carrusel" value={images} numVisible={5} circular style={{ maxWidth: '640px' }}
                 showThumbnails={false} showItemNavigators item={itemTemplate} thumbnail={thumbnailTemplate} />
         </div>

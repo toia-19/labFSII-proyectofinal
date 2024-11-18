@@ -1,8 +1,11 @@
 import './Navbar.css';
+
 import React from 'react';
+
+// REACT ROUTER
 import { useNavigate } from 'react-router-dom';
 
-// Menú desplegable
+// MENÚ DESPLEGABLE
 import { Menubar } from 'primereact/menubar';
 
 function Navbar() {
