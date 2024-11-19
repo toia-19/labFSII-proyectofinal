@@ -1,5 +1,6 @@
 import './Table.css';
 
+// REACT
 import React from 'react';
 
 // MUI
@@ -17,18 +18,18 @@ import TableRow from '@mui/material/TableRow';
 
 import Paper from '@mui/material/Paper';
 
-function createData(title, subTitle, image, content) {
-    return { title, subTitle, image, content };
+function createData(title, subTitle, image, content, price) {
+    return { title, subTitle, image, content, price };
 }
 
 function CustomTable() {
 
     const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-        createData('Eclair', 262, 16.0, 24, 6.0),
-        createData('Cupcake', 305, 3.7, 67, 4.3),
-        createData('Gingerbread', 356, 16.0, 49, 3.9),
+        createData('Xilófono', 'Instrumento de aire', <img src='' alt='Adaptador'/>, '', 28000),
+        createData('Redoblante', 'Instrumento de percusión', <img src='' alt='Adaptador'/>, '', 38000),
+        createData('Violín', 'Instrumento de cuerda', <img src='' alt='Adaptador'/>, '', 70000),
+        createData('Guitarra', 'Instrumento de cuerda', <img src='' alt='Adaptador'/>, '', 65000),
+        createData('Adaptador', 'Midi', <img src='../../Images/CableMIDIestándar_PuertoJoystick.png' alt='Adaptador'/>, 'Cable MIDI estándar. Puerto Joystick.', 10000),
     ];
 
     return (
@@ -41,6 +42,7 @@ function CustomTable() {
                             <TableCell align="right">Subtítulo</TableCell>
                             <TableCell align="right">Imagen</TableCell>
                             <TableCell align="right">Descripción</TableCell>
+                            <TableCell align="right">Precio</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -49,12 +51,11 @@ function CustomTable() {
                                 key={row.title}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell component="th" scope="row">
-                                    {row.title}
-                                </TableCell>
+                                <TableCell component="th" scope="row">{row.title}</TableCell>
                                 <TableCell align="right">{row.subTitle}</TableCell>
                                 <TableCell align="right">{row.image}</TableCell>
                                 <TableCell align="right">{row.content}</TableCell>
+                                <TableCell align="right">{row.price}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

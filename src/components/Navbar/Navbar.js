@@ -33,7 +33,7 @@ function Navbar() {
                     label: 'Instrumentos de percusión', className: 'i-menu-desplegable', command: () => { navigate('/categoria') }
                 },
                 {
-                    label: 'Instrumentos Midli', className: 'i-menu-desplegable', command: () => { navigate('/categoria') }
+                    label: 'Midi', className: 'i-menu-desplegable', command: () => { navigate('/categoria') }
                 }
             ]
         },
