@@ -9,8 +9,25 @@
 
 .btn-add{
     color: black;
+}
+
+/* MODAL */
+#modal-modal-title{
+    text-align: center;
+}
+
+#modal-modal-description{
+    margin: 0;
+
+    text-align: center;
 
     align-self: center;
+
+    justify-items: center;
+}
+
+.i-item, label, input{
+    display: block;
 }
 
 @media (min-width: 300px) and (max-width: 700px){

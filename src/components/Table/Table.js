@@ -29,6 +29,11 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
 // COLORES
 import { yellow } from '@mui/material/colors';
 
@@ -36,11 +41,29 @@ import { red } from '@mui/material/colors';
 
 import { green } from '@mui/material/colors';
 
+// TABLA
 function createData(title, subTitle, image, content, price, actions) {
     return { title, subTitle, image, content, price, actions };
 }
 
+// MODAL
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
 function CustomTable() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    
     const rows = [
         createData('Xilófono', 'Instrumento de aire', <img src='https://d1aeri3ty3izns.cloudfront.net/media/10/102273/1200/preview.jpg' alt='Xilófono' class='img-table' />, 'Instrumento de percusión idiófono formado por barras de madera que emiten notas afinadas.', 28000),
         createData('Redoblante', 'Instrumento de percusión', <img src='https://definicion.de/wp-content/uploads/2014/01/redoblante.jpg' alt='Redoblante' class='img-table' />, 'Tambor con bordón que se golpea con una baqueta. Se usa en bandas militares y orquestas, y su sonido depende de la tensión de los parches y el material de la bordonera.', 38000),
@@ -49,8 +72,10 @@ function CustomTable() {
         createData('Adaptador', 'Midi', <img src='https://thumbs4.static-thomann.de/thumb/thumb300x/pics/cms/image/guide/en/midi_interfaces/0027_soundblasterkabel.jpg' alt='Adaptador' class='img-table' />, 'Cable MIDI estándar. Puerto Joystick.', 10000),
     ];
 
+
     return (
         <div className="Table">
+            {/* TABLA */}
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -96,10 +121,52 @@ function CustomTable() {
 
             <Tooltip title="Agregar" className="btn-add">
                 Agregar nuevo ítem
-                <IconButton>
-                    <AddBoxIcon sx={{ color: green [ 400] }} />
+                <IconButton onClick={handleOpen}>
+                    <AddBoxIcon sx={{ color: green[400] }} />
                 </IconButton>
             </Tooltip>
+
+
+            {/* MODAL */}
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        <h1>Agregar nuevo ítem</h1>
+                    </Typography>
+
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <div className='i-item'>
+                            <label>Ingrese título:</label>
+                            <input type="text" id="title"/>
+                        </div>
+
+                        <div className='i-item'>
+                            <label>Ingrese subtítulo:</label>
+                            <input type="text" id="subTitle"/>
+                        </div>
+
+                        <div className='i-item'>
+                            <label>Ingrese una imagen:</label>
+                            <input type="file" accept="image/*" id="image"/>
+                        </div>
+
+                        <div className='i-item'>
+                            <label>Ingrese una descripción:</label>
+                            <input type="text" id="content"/>
+                        </div>
+
+                        <div className='i-item'>
+                            <label>Ingrese precio:</label>
+                            <input type="number" id="price"/>
+                        </div>
+                    </Typography>
+                </Box>
+            </Modal>
         </div>
     )
 };
