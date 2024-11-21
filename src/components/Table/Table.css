@@ -7,6 +7,12 @@
     padding-bottom: 1rem;
 }
 
+.btn-add{
+    color: black;
+
+    align-self: center;
+}
+
 @media (min-width: 300px) and (max-width: 700px){
     .img-table{
         width: 5rem;

@@ -27,10 +27,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import EditIcon from '@mui/icons-material/Edit';
 
+import AddBoxIcon from '@mui/icons-material/AddBox';
+
 // COLORES
 import { yellow } from '@mui/material/colors';
 
 import { red } from '@mui/material/colors';
+
+import { green } from '@mui/material/colors';
 
 function createData(title, subTitle, image, content, price, actions) {
     return { title, subTitle, image, content, price, actions };
@@ -89,6 +93,13 @@ function CustomTable() {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            <Tooltip title="Agregar" className="btn-add">
+                Agregar nuevo ítem
+                <IconButton>
+                    <AddBoxIcon sx={{ color: green [ 400] }} />
+                </IconButton>
+            </Tooltip>
         </div>
     )
 };
