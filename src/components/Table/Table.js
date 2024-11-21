@@ -35,6 +35,8 @@ import Typography from '@mui/material/Typography';
 
 import Modal from '@mui/material/Modal';
 
+import Button from '@mui/material/Button';
+
 // COLORES
 import { yellow } from '@mui/material/colors';
 
@@ -143,28 +145,30 @@ function CustomTable() {
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         <div className='i-item'>
                             <label>Ingrese título:</label>
-                            <input type="text" id="title"/>
+                            <input type="text" id="title" required/>
                         </div>
 
                         <div className='i-item'>
                             <label>Ingrese subtítulo:</label>
-                            <input type="text" id="subTitle"/>
+                            <input type="text" id="subTitle" required/>
                         </div>
 
                         <div className='i-item'>
                             <label>Ingrese una imagen:</label>
-                            <input type="file" accept="image/*" id="image"/>
+                            <input type="file" accept="image/*" id="image" required/>
                         </div>
 
                         <div className='i-item'>
                             <label>Ingrese una descripción:</label>
-                            <input type="text" id="content"/>
+                            <input type="text" id="content" required/>
                         </div>
 
                         <div className='i-item'>
                             <label>Ingrese precio:</label>
-                            <input type="number" id="price"/>
+                            <input type="number" id="price" required/>
                         </div>
+
+                        <Button id="btn-enviar">Enviar</Button>
                     </Typography>
                 </Box>
             </Modal>

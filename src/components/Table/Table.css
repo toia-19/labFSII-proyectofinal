@@ -26,6 +26,10 @@
     justify-items: center;
 }
 
+#btn-enviar{
+    margin: 1rem;
+}
+
 .i-item, label, input{
     display: block;
 }
